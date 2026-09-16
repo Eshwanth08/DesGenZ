@@ -1,0 +1,118 @@
+import type { DB } from "./types";
+
+export const DEFAULT_SEED: DB = {
+  users: [
+    { id: "u-hr", email: "hr@desgenz.app", name: "Hana Reyes (HR)", role: "hr" },
+    { id: "u-des", email: "designer@desgenz.app", name: "Devon Park", role: "employee" },
+  ],
+  projects: [
+    {
+      id: "p-atlas",
+      name: "Atlas Coffee — Brand & Web",
+      client: "Atlas Coffee Roasters",
+      budgetTier: "standard",
+      stage: "tasks",
+      createdAt: "2026-09-08T09:00:00.000Z",
+      updatedAt: "2026-09-14T17:30:00.000Z",
+      assignedTo: "u-des",
+      portalToken: "atlas-demo-token",
+      requirements: {
+        projectName: "Atlas Coffee — Brand & Web",
+        client: "Atlas Coffee Roasters",
+        objectives: [
+          "Refresh brand identity for a specialty coffee roaster",
+          "Launch a marketing site with online ordering",
+        ],
+        deliverables: ["Logo suite", "Brand guide", "Marketing site (6 pages)", "Product photography direction"],
+        constraints: ["Must ship before holiday season", "Accessibility AA", "Existing CMS must be kept"],
+        deadlines: ["Brand guide by Oct 15", "Site launch by Nov 20"],
+        budgetTier: "standard",
+        risks: ["Client approval loop historically slow", "Photography depends on weather for shoot day"],
+        missingInfo: ["Hosting preferences", "Who signs off on final copy?"],
+        rawText:
+          "Atlas Coffee Roasters is refreshing its brand and needs a marketing site with online ordering before the holiday season. Keep the existing CMS. Accessibility AA required. Deliverables: logo suite, brand guide, 6-page marketing site, photography direction. Budget: standard tier.",
+        confirmed: true,
+      },
+      intelligence: {
+        complexity: 62,
+        feasibility: 71,
+        budgetRealism: 68,
+        rationale:
+          "Standard budget with 6 screens and a brand suite is realistic, but the Nov 20 launch compresses photography direction; flag the approval loop as the main schedule risk.",
+        basis: "4 deliverables, 6-page site, 2 hard deadlines, standard tier",
+      },
+      tasks: [
+        {
+          id: "t-1",
+          title: "Moodboard & art direction",
+          priority: "high",
+          status: "done",
+          dependsOn: [],
+          checklist: [
+            { text: "Collect references", done: true },
+            { text: "Present 2 directions", done: true },
+          ],
+          comments: [{ author: "Devon Park", text: "Client picked direction B.", at: "2026-09-12T10:00:00.000Z" }],
+          createdAt: "2026-09-09T09:00:00.000Z",
+        },
+        {
+          id: "t-2",
+          title: "Logo suite v1",
+          priority: "high",
+          status: "doing",
+          dependsOn: ["t-1"],
+          checklist: [
+            { text: "Primary mark", done: true },
+            { text: "Wordmark", done: false },
+            { text: "Monochrome variants", done: false },
+          ],
+          comments: [],
+          createdAt: "2026-09-10T09:00:00.000Z",
+        },
+        {
+          id: "t-3",
+          title: "Brand guide draft",
+          priority: "medium",
+          status: "todo",
+          dependsOn: ["t-2"],
+          checklist: [{ text: "Color + type sections", done: false }],
+          comments: [],
+          createdAt: "2026-09-10T09:05:00.000Z",
+        },
+        {
+          id: "t-4",
+          title: "Site wireframes (6 pages)",
+          priority: "high",
+          status: "todo",
+          dependsOn: ["t-1"],
+          checklist: [
+            { text: "Home", done: false },
+            { text: "Shop", done: false },
+            { text: "Story", done: false },
+          ],
+          comments: [],
+          createdAt: "2026-09-11T09:00:00.000Z",
+        },
+        {
+          id: "t-5",
+          title: "Photography shot list",
+          priority: "low",
+          status: "todo",
+          dependsOn: [],
+          checklist: [{ text: "Confirm shoot day", done: false }],
+          comments: [],
+          createdAt: "2026-09-11T09:10:00.000Z",
+        },
+      ],
+      milestones: [
+        { id: "m-1", name: "Brand kit complete", startDay: 3, endDay: 14, taskIds: ["t-2", "t-3"] },
+        { id: "m-2", name: "Wireframes approved", startDay: 10, endDay: 22, taskIds: ["t-4"] },
+        { id: "m-3", name: "Site launch", startDay: 22, endDay: 45, taskIds: [] },
+      ],
+      drafts: [],
+      annotations: [],
+      approvals: [],
+      versions: [],
+    },
+  ],
+};

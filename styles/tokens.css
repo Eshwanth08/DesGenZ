@@ -1,0 +1,64 @@
+:root {
+  /* Light theme — light gray & black (all colors as RGB triplets so Tailwind
+     opacity modifiers like /50 keep working). */
+  --bg-base: 240 240 242;          /* page background, light gray */
+  --bg-surface: 250 250 251;       /* cards, panels, sidebars */
+  --bg-faint: 229 229 233;         /* subtle fills, chips, skeletons */
+  --bg-surface-glass: rgba(250, 250, 251, 0.7);
+  --border-subtle: 208 208 214;    /* card borders, dividers */
+  --border-glass: rgba(0, 0, 0, 0.07);
+  --text-primary: 14 14 16;        /* near black */
+  --text-secondary: 82 82 91;
+  --text-muted: 142 142 150;
+  --accent: 14 14 16;              /* accent = black in light theme */
+  --accent-muted: 224 224 229;     /* selected rows, soft highlights */
+  --accent-hover: 39 39 44;
+  --accent-contrast: 245 245 246;  /* text/icons on accent */
+  --focus: 14 14 16;
+  --success: 39 122 84;
+  --warning: 158 106 34;
+  --danger: 186 55 55;
+  --success-muted: 223 239 228;
+  --warning-muted: 246 235 214;
+  --danger-muted: 247 229 229;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.09);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+  /* Monochrome light theme: no glow on accents. */
+  --glow-accent: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --focus-glow: 0 0 0 3px rgba(14, 14, 16, 0.07);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-theme="dark"] {
+  /* Dark theme — professional indigo-on-dark. Deep blue-black surfaces with
+     brightened text tiers for real readability, an indigo accent, and a
+     soft 10% indigo glow on highlighted elements. */
+  --bg-base: 13 15 23;             /* blue-black page background */
+  --bg-surface: 19 22 32;          /* cards, panels, inputs */
+  --bg-faint: 28 32 45;            /* chips, skeletons, neutral fills */
+  --bg-surface-glass: rgba(15, 17, 26, 0.72);
+  --border-subtle: 44 49 66;
+  --border-glass: rgba(129, 140, 248, 0.08);
+  --text-primary: 236 239 248;     /* bright cool white — primary text */
+  --text-secondary: 172 179 199;   /* clearly readable secondary */
+  --text-muted: 128 136 158;       /* lifted from ~3:1 to ~5:1 contrast */
+  --accent: 99 102 241;            /* indigo-500 — buttons, links, brand */
+  --accent-muted: 27 30 53;        /* 10% indigo wash — selected rows */
+  --accent-hover: 124 127 255;     /* indigo-400 hover lift */
+  --accent-contrast: 255 255 255;  /* white text on indigo */
+  --focus: 129 140 248;            /* indigo-400 focus ring */
+  --success: 110 199 142;
+  --warning: 230 176 102;
+  --danger: 240 122 122;
+  --success-muted: 24 44 33;
+  --warning-muted: 50 40 25;
+  --danger-muted: 50 28 28;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.55);
+  /* The 10% indigo glow — ambient halo on accent-colored elements. */
+  --glow-accent: 0 0 0 1px rgba(99, 102, 241, 0.28), 0 4px 24px rgba(99, 102, 241, 0.10);
+  --focus-glow: 0 0 0 3px rgba(99, 102, 241, 0.16);
+}
